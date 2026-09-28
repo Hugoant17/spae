@@ -1,0 +1,17 @@
+{
+  "sql_engine": "PGlite PostgreSQL WASM 0.5.8",
+  "sql_suites_passed": [
+    "backend_smoke.sql",
+    "participant_actions.sql",
+    "three_roles.sql"
+  ],
+  "migrations_passed": 8,
+  "dart_structure_errors": 0,
+  "certificate_renders_passed": 3,
+  "flutter_analyze": "not_run",
+  "flutter_test": "not_run",
+  "flutter_build": "not_run",
+  "live_supabase": "not_accessed",
+  "edge_version": "2026-09-27.2",
+  "certificate_cache": "v7"
+}

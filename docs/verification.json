@@ -1,0 +1,24 @@
+{
+  "revision": "2026-09-26 ultimos ajustes SPAE 2609",
+  "executed": {
+    "observations_static_check": "passed: 20/20",
+    "latest_adjustments_static_check": "passed: 14/14",
+    "relative_imports_and_delimiters": "passed",
+    "original_indicator_headers": "passed: NAA/TRC/TEC",
+    "rpc_names": "passed",
+    "typescript_syntax": "passed: TypeScript transpile parser for index.ts and certificate.ts",
+    "embedded_scrum_model_extraction": "passed: model PDF present in docs/referencias",
+    "certificate_version": "v6 forces regeneration on next download",
+    "certificate_civil_date": "passed: 2026-09-23 renders as 23 de setiembre de 2026 in America/Lima"
+  },
+  "not_executed": [
+    "flutter analyze",
+    "flutter test",
+    "flutter build web",
+    "PostgreSQL migration execution and SQL smoke tests",
+    "Deno/Supabase runtime",
+    "Supabase end-to-end"
+  ],
+  "deployment": "Not deployed; apply 202609260002_ultimos_ajustes.sql after 202609260001_observaciones_finales.sql, redeploy spae-api and rebuild Flutter",
+  "runtime_limitation": "Flutter/Dart/Deno/PostgreSQL are not installed in the correction environment"
+}

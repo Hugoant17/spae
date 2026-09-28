@@ -1,0 +1,37 @@
+CERTIFICADO SPAE: corrección y comprobación del modelo V5
+
+Esta actualización incluye la plantilla gráfica solicitada, un PDF nuevo para
+certificados ya emitidos y una comprobación visible de versión en la descarga.
+
+1. Cierra Flutter con Ctrl+C en PowerShell.
+2. Descomprime SPAE_Certificado_Modelo_v5_Actualizacion.zip DENTRO de:
+   C:\Users\USER\Desktop\TESIS\spae_flutter
+   Conserva la estructura de carpetas y acepta reemplazar los archivos.
+   La ruta correcta será:
+   C:\Users\USER\Desktop\TESIS\spae_flutter\supabase\functions\spae-api\index.ts
+   Evita crear una carpeta spae_flutter adicional dentro de spae_flutter.
+3. Abre PowerShell en esa carpeta y comprueba la versión:
+   Select-String -Path .\supabase\functions\spae-api\index.ts -Pattern 'v5/'
+   Select-String -Path .\lib\core\live\download.dart -Pattern 'modelo_spae_v5'
+   Ambas búsquedas deben mostrar una coincidencia.
+4. Despliega la función:
+   npx supabase functions deploy spae-api --project-ref friocmtkfannujwkslge --no-verify-jwt
+   El aviso Docker is not running no impide el despliegue si aparece Deployed Functions.
+5. Reinicia Flutter desde esa misma carpeta:
+   flutter run -d chrome --web-port=3000 --dart-define=SUPABASE_URL="https://friocmtkfannujwkslge.supabase.co" --dart-define=SUPABASE_PUBLISHABLE_KEY="sb_publishable_GiagZG0ZL3Ci4pDo8ptXLw_bDjKFfvl"
+6. En la aplicación abre Certificados y pulsa PDF en el participante.
+   Abre SOLO el archivo recién descargado con nombre terminado en
+   _modelo_spae_v5.pdf. Comprueba que tenga el logotipo, los bordes de colores,
+   las dos firmas y los datos de ese participante.
+
+Si la aplicación muestra "Supabase aún entrega el certificado anterior", confirma
+que el despliegue se hizo en el proyecto y carpeta indicados. Si el PDF nuevo
+todavía tuviese diseño anterior, consulta en Supabase > SQL Editor:
+
+select certificate_number, pdf_path
+from public.certificates
+order by issued_at desc
+limit 10;
+
+Tras pulsar PDF, la ruta del certificado consultado debe comenzar por v5/.
+No es necesario ejecutar SQL ni repetir flutter pub get para instalar este cambio.

@@ -1,0 +1,924 @@
+{
+  "columns": [
+    {
+      "table_name": "api_rate_limits",
+      "column_name": "key",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "api_rate_limits",
+      "column_name": "hits",
+      "data_type": "integer",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "api_rate_limits",
+      "column_name": "reset_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "attendance",
+      "column_name": "id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "attendance",
+      "column_name": "session_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "attendance",
+      "column_name": "enrollment_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "attendance",
+      "column_name": "status",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "attendance",
+      "column_name": "recorded_by",
+      "data_type": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "attendance",
+      "column_name": "recorded_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "audit_logs",
+      "column_name": "id",
+      "data_type": "bigint",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "audit_logs",
+      "column_name": "actor_id",
+      "data_type": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "audit_logs",
+      "column_name": "action",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "audit_logs",
+      "column_name": "entity",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "audit_logs",
+      "column_name": "entity_id",
+      "data_type": "text",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "audit_logs",
+      "column_name": "details",
+      "data_type": "jsonb",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "audit_logs",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "certificates",
+      "column_name": "id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "certificates",
+      "column_name": "enrollment_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "certificates",
+      "column_name": "certificate_number",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "certificates",
+      "column_name": "pdf_path",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "certificates",
+      "column_name": "requirement_met_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "certificates",
+      "column_name": "issued_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "certificates",
+      "column_name": "issued_by",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "certificates",
+      "column_name": "verification_code",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "certificates",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "certificates",
+      "column_name": "snapshot",
+      "data_type": "jsonb",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "certificates",
+      "column_name": "delivered_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "enrollment_attendance_summary",
+      "column_name": "enrollment_id",
+      "data_type": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "enrollment_attendance_summary",
+      "column_name": "total_sessions",
+      "data_type": "bigint",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "enrollment_attendance_summary",
+      "column_name": "attended_sessions",
+      "data_type": "bigint",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "enrollment_attendance_summary",
+      "column_name": "attendance_percent",
+      "data_type": "numeric",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "enrollments",
+      "column_name": "id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "enrollments",
+      "column_name": "code",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "enrollments",
+      "column_name": "training_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "enrollments",
+      "column_name": "participant_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "enrollments",
+      "column_name": "wants_certificate",
+      "data_type": "boolean",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "enrollments",
+      "column_name": "status",
+      "data_type": "USER-DEFINED",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "enrollments",
+      "column_name": "rejection_reason",
+      "data_type": "text",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "enrollments",
+      "column_name": "completion_rate",
+      "data_type": "numeric",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "enrollments",
+      "column_name": "reviewed_by",
+      "data_type": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "enrollments",
+      "column_name": "reviewed_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "enrollments",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "enrollments",
+      "column_name": "requirement_met_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "enrollments",
+      "column_name": "registration_snapshot",
+      "data_type": "jsonb",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "enrollments",
+      "column_name": "registration_checks",
+      "data_type": "jsonb",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "management_indicators",
+      "column_name": "training_id",
+      "data_type": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "management_indicators",
+      "column_name": "title",
+      "data_type": "text",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "management_indicators",
+      "column_name": "naa",
+      "data_type": "numeric",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "management_indicators",
+      "column_name": "tec_hours",
+      "data_type": "numeric",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "management_indicators",
+      "column_name": "trc",
+      "data_type": "numeric",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "membership_payments",
+      "column_name": "id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "membership_payments",
+      "column_name": "membership_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "membership_payments",
+      "column_name": "period",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "membership_payments",
+      "column_name": "amount",
+      "data_type": "numeric",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "membership_payments",
+      "column_name": "payment_method",
+      "data_type": "text",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "membership_payments",
+      "column_name": "operation_number",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "membership_payments",
+      "column_name": "receipt_path",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "membership_payments",
+      "column_name": "status",
+      "data_type": "USER-DEFINED",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "membership_payments",
+      "column_name": "rejection_reason",
+      "data_type": "text",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "membership_payments",
+      "column_name": "reviewed_by",
+      "data_type": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "membership_payments",
+      "column_name": "reviewed_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "membership_payments",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "memberships",
+      "column_name": "id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "memberships",
+      "column_name": "profile_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "memberships",
+      "column_name": "starts_on",
+      "data_type": "date",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "memberships",
+      "column_name": "ends_on",
+      "data_type": "date",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "memberships",
+      "column_name": "status",
+      "data_type": "USER-DEFINED",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "memberships",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "participants",
+      "column_name": "id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "participants",
+      "column_name": "profile_id",
+      "data_type": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "participants",
+      "column_name": "full_name",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "participants",
+      "column_name": "dni",
+      "data_type": "character varying",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "participants",
+      "column_name": "email",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "participants",
+      "column_name": "phone",
+      "data_type": "character varying",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "participants",
+      "column_name": "nurse_auditor_registry",
+      "data_type": "boolean",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "participants",
+      "column_name": "hospital",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "participants",
+      "column_name": "region",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "participants",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "participants",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "participants",
+      "column_name": "lookup_hash",
+      "data_type": "text",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "profiles",
+      "column_name": "id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "profiles",
+      "column_name": "full_name",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "profiles",
+      "column_name": "email",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "profiles",
+      "column_name": "dni",
+      "data_type": "character varying",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "profiles",
+      "column_name": "phone",
+      "data_type": "character varying",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "profiles",
+      "column_name": "hospital",
+      "data_type": "text",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "profiles",
+      "column_name": "region",
+      "data_type": "text",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "profiles",
+      "column_name": "nurse_auditor_registry",
+      "data_type": "boolean",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "profiles",
+      "column_name": "role",
+      "data_type": "USER-DEFINED",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "profiles",
+      "column_name": "enabled",
+      "data_type": "boolean",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "profiles",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "profiles",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "profiles",
+      "column_name": "registration_status",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "profiles",
+      "column_name": "registration_reason",
+      "data_type": "text",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "system_settings",
+      "column_name": "key",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "system_settings",
+      "column_name": "value",
+      "data_type": "jsonb",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "system_settings",
+      "column_name": "description",
+      "data_type": "text",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "system_settings",
+      "column_name": "updated_by",
+      "data_type": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "system_settings",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "training_payments",
+      "column_name": "id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "training_payments",
+      "column_name": "enrollment_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "training_payments",
+      "column_name": "amount",
+      "data_type": "numeric",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "training_payments",
+      "column_name": "payment_method",
+      "data_type": "text",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "training_payments",
+      "column_name": "operation_number",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "training_payments",
+      "column_name": "receipt_path",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "training_payments",
+      "column_name": "status",
+      "data_type": "USER-DEFINED",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "training_payments",
+      "column_name": "rejection_reason",
+      "data_type": "text",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "training_payments",
+      "column_name": "reviewed_by",
+      "data_type": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "training_payments",
+      "column_name": "reviewed_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "training_payments",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "training_sessions",
+      "column_name": "id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "training_sessions",
+      "column_name": "training_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "training_sessions",
+      "column_name": "title",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "training_sessions",
+      "column_name": "starts_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "training_sessions",
+      "column_name": "ends_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "trainings",
+      "column_name": "id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "trainings",
+      "column_name": "title",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "trainings",
+      "column_name": "slug",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "trainings",
+      "column_name": "description",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "trainings",
+      "column_name": "objectives",
+      "data_type": "text",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "trainings",
+      "column_name": "syllabus",
+      "data_type": "text",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "trainings",
+      "column_name": "speaker",
+      "data_type": "text",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "trainings",
+      "column_name": "modality",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "trainings",
+      "column_name": "start_date",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "trainings",
+      "column_name": "end_date",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "trainings",
+      "column_name": "total_hours",
+      "data_type": "numeric",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "trainings",
+      "column_name": "max_capacity",
+      "data_type": "integer",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "trainings",
+      "column_name": "price",
+      "data_type": "numeric",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "trainings",
+      "column_name": "image_url",
+      "data_type": "text",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "trainings",
+      "column_name": "status",
+      "data_type": "USER-DEFINED",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "trainings",
+      "column_name": "archived_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "trainings",
+      "column_name": "created_by",
+      "data_type": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "trainings",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "trainings",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "source": "profiles",
+      "column_name": "id",
+      "target": "users",
+      "target_column": "id"
+    },
+    {
+      "source": "trainings",
+      "column_name": "created_by",
+      "target": "profiles",
+      "target_column": "id"
+    },
+    {
+      "source": "training_sessions",
+      "column_name": "training_id",
+      "target": "trainings",
+      "target_column": "id"
+    },
+    {
+      "source": "participants",
+      "column_name": "profile_id",
+      "target": "profiles",
+      "target_column": "id"
+    },
+    {
+      "source": "enrollments",
+      "column_name": "training_id",
+      "target": "trainings",
+      "target_column": "id"
+    },
+    {
+      "source": "enrollments",
+      "column_name": "participant_id",
+      "target": "participants",
+      "target_column": "id"
+    },
+    {
+      "source": "enrollments",
+      "column_name": "reviewed_by",
+      "target": "profiles",
+      "target_column": "id"
+    },
+    {
+      "source": "training_payments",
+      "column_name": "enrollment_id",
+      "target": "enrollments",
+      "target_column": "id"
+    },
+    {
+      "source": "training_payments",
+      "column_name": "reviewed_by",
+      "target": "profiles",
+      "target_column": "id"
+    },
+    {
+      "source": "attendance",
+      "column_name": "session_id",
+      "target": "training_sessions",
+      "target_column": "id"
+    },
+    {
+      "source": "attendance",
+      "column_name": "enrollment_id",
+      "target": "enrollments",
+      "target_column": "id"
+    },
+    {
+      "source": "attendance",
+      "column_name": "recorded_by",
+      "target": "profiles",
+      "target_column": "id"
+    },
+    {
+      "source": "memberships",
+      "column_name": "profile_id",
+      "target": "profiles",
+      "target_column": "id"
+    },
+    {
+      "source": "membership_payments",
+      "column_name": "membership_id",
+      "target": "memberships",
+      "target_column": "id"
+    },
+    {
+      "source": "membership_payments",
+      "column_name": "reviewed_by",
+      "target": "profiles",
+      "target_column": "id"
+    },
+    {
+      "source": "certificates",
+      "column_name": "enrollment_id",
+      "target": "enrollments",
+      "target_column": "id"
+    },
+    {
+      "source": "certificates",
+      "column_name": "issued_by",
+      "target": "profiles",
+      "target_column": "id"
+    },
+    {
+      "source": "system_settings",
+      "column_name": "updated_by",
+      "target": "profiles",
+      "target_column": "id"
+    },
+    {
+      "source": "audit_logs",
+      "column_name": "actor_id",
+      "target": "profiles",
+      "target_column": "id"
+    }
+  ]
+}

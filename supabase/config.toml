@@ -1,0 +1,5 @@
+project_id = "spae-capacitaciones"
+[functions.spae-api]
+verify_jwt = false
+# Las acciones privadas validan el JWT mediante auth.getUser en index.ts.
+# Inscripción/consulta pública usa código privado y límite de solicitudes.

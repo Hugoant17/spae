@@ -1,0 +1,45 @@
+name: Verificar Flutter y backend
+on: [push, workflow_dispatch]
+jobs:
+  flutter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter analyze --no-fatal-infos --no-fatal-warnings
+      - run: flutter test
+      - run: flutter build web --release
+  postgres:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: spae_test
+        ports: ['5432:5432']
+        options: --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      PGHOST: localhost
+      PGUSER: postgres
+      PGPASSWORD: postgres
+      PGDATABASE: spae_test
+    steps:
+      - uses: actions/checkout@v4
+      - run: psql -v ON_ERROR_STOP=1 -f tests/postgres_fixture.sql
+      - run: psql -v ON_ERROR_STOP=1 -f supabase/schema.sql
+      - run: psql -v ON_ERROR_STOP=1 -f supabase/migrations/202609090001_backend.sql
+      - run: psql -v ON_ERROR_STOP=1 -f supabase/migrations/202609160001_observaciones.sql
+      - run: psql -v ON_ERROR_STOP=1 -f supabase/migrations/202609160002_fichas_entrega.sql
+      - run: psql -v ON_ERROR_STOP=1 -f supabase/migrations/202609230001_correcciones.sql
+      - run: psql -v ON_ERROR_STOP=1 -f supabase/migrations/202609260001_observaciones_finales.sql
+      - run: psql -v ON_ERROR_STOP=1 -f supabase/migrations/202609260002_ultimos_ajustes.sql
+      - run: psql -v ON_ERROR_STOP=1 -f supabase/migrations/202609270001_botones_participantes.sql
+      - run: psql -v ON_ERROR_STOP=1 -f supabase/migrations/202609270002_revision_tres_perfiles.sql
+      - run: psql -v ON_ERROR_STOP=1 -f tests/backend_smoke.sql
+      - run: psql -v ON_ERROR_STOP=1 -f tests/participant_actions.sql
+      - run: psql -v ON_ERROR_STOP=1 -f tests/three_roles.sql
