@@ -122647,9 +122647,9 @@ else s=A.is(s==="membership_payments"?"memberships":s)
 return s},
 $S:41}
 A.alg.prototype={
-$3(a2,a3,a4){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e=null,d="full_name",c="starts_on",b=A.dx(a3),a=this.a,a0=a.c,a1=a0==="membership_payments"
-if(a1){s=A.b([],t.H7)
-for(r=b.length,q=t.N,p=t.z,o=0;o<b.length;b.length===r||(0,A.z)(b),++o){n=b[o]
+$3(a5,a6,a7){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e=null,d="full_name",c="starts_on",b="operation_number",a="rejection_reason",a0="wants_certificate",a1=A.dx(a6),a2=this.a,a3=a2.c,a4=a3==="membership_payments"
+if(a4){s=A.b([],t.H7)
+for(r=a1.length,q=t.N,p=t.z,o=0;o<a1.length;a1.length===r||(0,A.z)(a1),++o){n=a1[o]
 for(m=J.a6(n),l=A.dx(m.i(n,"payments")),k=l.length,j=0;j<l.length;l.length===k||(0,A.z)(l),++j){i=l[j]
 h=A.vj(e,e,q,p)
 h.M(0,i)
@@ -122657,24 +122657,34 @@ h.m(0,d,m.i(n,d))
 h.m(0,"email",m.i(n,"email"))
 h.m(0,c,m.i(n,c))
 h.m(0,"ends_on",m.i(n,"ends_on"))
-s.push(h)}}b=s}s=a.f!=null
-if(s){r=A.V(b).h("aj<1>")
-b=A.a0(new A.aj(b,new A.alb(a),r),r.h("o.E"))}r=a0!=="memberships"
-if(!r||a0==="members")g=B.Ga
-else if(a1)g=B.FX
-else{if(a0==="certificates")q=a.e==="member"?B.acI:B.FZ
-else if(a0==="participants"){q=t.N
+s.push(h)}}a1=s}s=a2.f!=null
+if(s){r=A.V(a1).h("aj<1>")
+a1=A.a0(new A.aj(a1,new A.alb(a2),r),r.h("o.E"))}r=a3!=="memberships"
+if(!r||a3==="members")g=B.Ga
+else if(a4)g=B.FX
+else{if(a3==="certificates")q=a2.e==="member"?B.acI:B.FZ
+else if(a3==="participants"){q=t.N
 q=A.a3(["full_name","Nombre","dni","DNI","email","Correo","phone","Celular","hospital","Hospital","region","Regi\xf3n"],q,q)}else q=B.pi
-g=q}q=A.jp(e,e,e,B.ZY,e,e,a4,e,e,e,"Actualizar")
-a0=a0==="certificates"&&a.e!=="member"?new A.alc(a2,a4):e
+g=q}q=A.jp(e,e,e,B.ZY,e,e,a7,e,e,e,"Actualizar")
+a3=a3==="certificates"&&a2.e!=="member"?new A.alc(a5,a7):e
 p=t.p
-a0=A.b([new A.d7(B.dm,e,e,q,e),new A.ic(b,g,new A.ald(a,a2,a4),e,a0,e)],p)
-if(s&&b.length!==0){s=A.b([],p)
-for(q=["full_name","dni","email","phone","hospital","region","operation_number","amount","rejection_reason"],o=0;o<9;++o){f=q[o]
-s.push(new A.b_(B.Tx,A.Ke(f+": "+A.fC(J.Y(B.b.gP(b),f)),e),e))}a0.push(A.hH(new A.b_(B.cF,A.bA(s,B.an,B.o,B.w,0,B.u),e),e))}if(a.e==="member")a=!r||a1
-else a=!1
-if(a)a0.push(new A.d7(B.dm,e,e,A.n9(B.LT,new A.ale(a2)),e))
-return A.bA(a0,B.af,B.o,B.w,0,B.u)},
+a3=A.b([new A.d7(B.dm,e,e,q,e),new A.ic(a1,g,new A.ald(a2,a5,a7),e,a3,e)],p)
+if(s&&a1.length!==0){s=A.b([],p)
+for(q=["full_name","dni","email","phone","hospital","region",b,a,a0,"amount"],o=0;o<10;++o){f=q[o]
+if(f==="full_name")p="Nombre completo"
+else if(f==="dni")p="DNI"
+else if(f==="email")p="Correo electr\xf3nico"
+else if(f==="phone")p="Tel\xe9fono"
+else if(f==="hospital")p="Hospital"
+else if(f==="region")p="Regi\xf3n"
+else if(f===b)p="N\xfamero de operaci\xf3n"
+else if(f===a)p="Motivo de rechazo"
+else if(f===a0)p="\xbfDesea certificado?"
+else p=f==="amount"?"Precio (S/.) ":f
+s.push(new A.b_(B.Tx,A.Ke(p+": "+A.fC(J.Y(B.b.gP(a1),f)),e),e))}a3.push(A.hH(new A.b_(B.cF,A.bA(s,B.an,B.o,B.w,0,B.u),e),e))}if(a2.e==="member")a2=!r||a4
+else a2=!1
+if(a2)a3.push(new A.d7(B.dm,e,e,A.n9(B.LT,new A.ale(a5)),e))
+return A.bA(a3,B.af,B.o,B.w,0,B.u)},
 $C:"$3",
 $R:3,
 $S:46}
